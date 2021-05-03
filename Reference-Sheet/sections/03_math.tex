@@ -1,0 +1,44 @@
+\section{Math Symbols \& Where to Find Them}
+One of the most common reasons to use \LaTeX~is probably its capabilities to format and structure math and formula derivations. It then probably comes at no surprise that there are bunch of options and available commands \& environments when it comes to math.
+
+\subsection{The Math Environments}
+\begin{itemize}
+    \item Inline math. This is when you want your formula to be part of the paragraph or just need a math symbol, like $\alpha, \beta, \nabla$. You simply surround your math expression with a dollar sign \$ at the start and end.\footnote{In actuality the math environment is started with a backslash and round bracked and ended in similar fashion. However, the dollar signs are a lot more convenient than \textbackslash( \textbackslash)}
+    \item Doubling the dollar signs and putting two at each side will break your paragraph and put the formula centered at its own line, like this one $$\sum_{i=1}^N i*(-1)^i$$
+    \item then there are environments that offer more control.
+        \begin{enumerate}
+            \item align
+            \item eqnarray
+            \item bmatrix
+        \end{enumerate}
+\end{itemize}
+
+\subsection{The Syntax}
+While \LaTeX~will make your formulas shiny and great to read, it is not the most readable to write down all of them. Most symbols are placed by backslash commands:
+i.e. $\alpha$: \$ \textbackslash alpha \$, $\sum$: \$ \textbackslash sum \$.
+Then if you want to add indices, powers, etc. you will need the underscore and hat symbols: 
+$\sum_{i=1}^N x_i^{i/2}$ is written as \$ \textbackslash sum\_\{i=1\}\^{}N x\_i\^{}\{i/2\} \$ or $e^{i\pi}=-1$ as \$ e\^{}\{i\textbackslash pi\} = -1 \$. 
+The underscore implies a subscript. If you have a single symbol you can omit the curly braces (e.g. the $i$-index), but if you have an expression and all of it is supposed to be lowered then you will need to put \_\{expr\} for latex to capture it all. Analogous, the \^{} hat operator does the same for superscript (e.g. powers or the upper limit of a sum or integral).
+
+\subsubsection{A Selection of Symbols}
+There are a huge amount of more specialised symbols, but here are some of those we tend to use a lot. All of them need to be prefaced by a \textbackslash and used in a math environment. The commands are written in italics:
+\begin{itemize}
+    \item $\int$: The integral is done with \textit{int}
+    \item $\sum$: The large Sigma for sum can be accessed with \textit{sum}
+    \item $\delta, \Delta, \sigma, \Sigma$: All of the Greek letters can be accessed in lowercase by their romanised names (alpha, beta, gamma, etc.) and their uppercase versions are accessed by capitalising the first letter (Sigma, Delta, etc.)
+    \item $\log$: Text in math environment is usually without any spaces, the \textit{log} operator however adds some space before and after to keep your formula readable
+    \item $\pm$:  To give a range or uncertainty, etc. you might want to use \textit{pm}
+    \item $\bar{x}, \hat{\theta}$: the \textit{bar} and \textit{hat} decorators both use curly braces to know what they are targeting: \textbackslash bar\{x\}. There exist a lot more decorators than those two
+    \item $\approx$: \textit{approx} gives you the all too common wavy equal sign
+    \item $\geq, \leq$: \textit{geq} and \textit{leq} are short forms for "greater or equal" and "lesser or equal" respectively.
+    \item $\rightarrow, \leftrightarrow$: arrows are done by writing out their name, e.g. \textit{rightarrow} or \textit{leftrightarrow} (right arrow can be shorthanded with \textit{to})
+    \item $\sqrt{x}$: The square root operator is \textit{sqrt} followed by the stuff under the root in curly braces
+    \item $\frac{2}{3}$: fractions are written as \textit{frac} followed by two sets of curly braces. The first denotes the enumerator and the second the denominator. \textbackslash frac \{Above\}\{Below\}
+    \item $\left[ \frac{p(x|\theta)p(\theta)}{\sum_\theta p(\theta)p(x|\theta)} \right]$: If you want your brackets (works for (,[,$\langle$, $\{$) to scale to their contents use \textit{left} and \textit{right} before the corresponding brackets, \$ \textbackslash left( *content* \textbackslash right) \$
+    \item $\in$: The element-of sign is denoted by \textit{in}
+    \item $\mathcal{E}, \mathcal{R}$: "Mathy" letters can be done by using \textit{mathcal} followed by the letter in curly braces, \$ \textbackslash mathcal\{R\}
+    \item $\alpha > k, \mbox{for all } k \in \mathcal{N}$: for text inside of a math environment use \textit{mbox} and put your text in curly braces after, \$ \textbackslash mbox\{your text with spaces\} \$
+    \item $\cdot$: The center dot is often used for multiplication or stand-in for symbols and is shortened to \textit{cdot}
+    \item $\langle , \rangle$: the left and right angled brackets are done with \textit{langle} and \textit{rangle} for \textit{l}eft and \textit{r}ight angle.
+    \item $\{$: since curly braces are special characters they have to be "escaped" to be written as literal characters in your document, escape them with a backslash: \$ \textbackslash \{ \$
+\end{itemize}

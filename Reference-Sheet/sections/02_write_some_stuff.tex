@@ -1,0 +1,35 @@
+\section{Write some stuff!}
+
+With the preamble out of the way, you can start filling your document with text by writing in the 'document' part of your .tex file as described above.
+
+You may want to start by including your title, author and date information by simply typing \texttt{\textbackslash maketitle}. This will add the title information to your document, already formatted \footnote{the way the title is formatted depends on the 'style' you use for your document and can be changed}.
+
+You can write text as you would with any other text editor. However, the idea behind \LaTeX~is that all (most) of the formatting is done explicitly by including commands in your text.
+For example, you may have already noticed that pressing enter does not create a line break. A "forced" line break is added with two backslashes \textbackslash\textbackslash. To start a new paragraph in your text, add an empty line in your .tex file (so press enter twice).
+
+You can structure your document using sections and subsections using \texttt{\textbackslash section\{your section header\}}. You can subdivide sections with the command \texttt{\textbackslash subsection} and even further using \texttt{\textbackslash subsubsection}.
+
+Per default, most things in latex are enumerated (sections get a leading number, equations get a number as well). You can tell latex to not number this environment by putting a * behind it.\\
+\texttt{ \textbackslash section*\{\} } would create a non numbered section.
+
+As an added bonus, this structure can be used to create a table of contents, with the aptly named command \texttt{\textbackslash tableofcontents}\footnote{If you include \texttt{\textbackslash usepackage\{ hyperref \}} in your preamble, you get a clickable table of contents that takes you directly to the correct place in the document}.
+
+
+\subsection{Pretty Abstract Stuff}
+
+You can use the \texttt{abstract} environment to format the abstract of your article. The standard article document class will format it as you would expect an abstract in a paper to look like.
+
+Environments are commands that change the way \LaTeX~formats portions of your document. They consist of a start and an end tag, with the type of the environment in curly braces. You have encountered the abstract environment just now, but there is a range of useful environments for lists, numbered lists, figures, \dots
+
+Environments look like this:\\
+
+\begin{verbatim}
+\begin{abstract} 
+    this text will be formatted as an abstract.
+\end{abstract}
+\end{verbatim}
+
+You can easily see that this is the "abstract" environment, as the type of the environment is written in between the curly braces. Note that the end tag always has to have the same environment type as the corresponding begin tag.
+
+You can have environments inside environments to structure your document precisely how you want to and \LaTeX~will figure out how to do the formatting for you, depending on the style you choose.
+Separating the structure of your document from the final 'look' also allows you to try different styles without having to fix all the magically broken newlines and page breaks (looking at you Word).

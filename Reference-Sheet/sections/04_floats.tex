@@ -1,0 +1,139 @@
+\section{Floating Around: Figures \& Tables}
+
+A very common environment is the \texttt{figure} environment. It allows you to wrap all kinds of information together with a caption. Figures will also be numbered automatically. You can give your figure a 'tag' and refer to it from some other place in your document. This is useful if you reorder your figures, or add new ones, since it will automatically figure out which number your figure currently has and print it in the text\footnote{once again, if you include the \texttt{\textbackslash hyperref} package in your preamble these references will be clickable}$^,$\footnote{you can label all sorts of stuff by adding a \texttt{\textbackslash label}}.
+
+Add a figure like this:
+
+\begin{figure}[h!]
+\centering
+\begin{verbatim}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{thisisanimage.jpg}
+    \caption{a witty caption}
+    \label{fig:figures}
+\end{figure}    
+\end{verbatim}
+\caption{this is a figure, showing you the latex commands you can use to create a figure}
+\label{fig:figures}
+\end{figure}
+
+The \texttt{\[h!\]} at the top passes options to the figure environment. In particular the \texttt{h} tells latex to display the figure as close as possible to where you put it in your document, and the \texttt{!} makes the placement ignore some regular restrictions. This will give you the figure where you want it most of the time if the placement is that important. Other options include \texttt{t} and \texttt{b} for at the top or bottom of the page, respectively.
+
+I gave the figure above the label \texttt{fig:figures}. Using the label we can reference the figure like this: \texttt{\textbackslash ref\{fig:figures\}}. Use this when referring to figures, instead of typing out the number when referring to figures, like Figure \ref{fig:figures}\footnote{clickable! although admittedly not very spectacular since the reference is right underneath the figure}. You want to put the label directly below the caption command to make sure that it compiles correctly.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Imagining \LaTeX~: How to Use Images}
+
+Images are a good example for something you'll probably want to wrap in a figure. If you want to use figures in your document, you need to add a package for that in your preamble: \texttt{\textbackslash usepackage\{graphicx\}} is a common one. Look in the example figure above (\ref{fig:figures}) for how to use the \textit{includegraphics} command.\\
+
+\texttt{includegraphics} takes a number of optional arguments that let you manipulate the image. Most commonly, you can set the width or height of the image to a fixed number (if you specify only one, the other will be adjusted automatically to not stretch the picture). There are different units to use, but the most handy one is \texttt{pt} ('points') \footnote{the 'points' measure is the same used for font sizes}. 
+
+Alternatively, \LaTeX~ has a set of commands to automatically adjust image sizes to your page; you can even do math with this: using \texttt{width=0.5\textbackslash linewidth} will set the width of your image to half of the width of a line of text.
+
+If you want to add multiple images to a single figure, \LaTeX~ offers a number of tools for positioning, but they can sometimes be finicky. As a general rule, if you add two images whose combined width is less than the linewidth, they will be placed next to each other, otherwise the second one is placed on a new line. As with text you can force them to be placed vertically by adding an explicit linebreak (\textbackslash\textbackslash).\\
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=0.9\linewidth]{latexisgreat.jpg}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=0.9\linewidth]{bernie.jpg}
+    \end{subfigure}
+    \caption{Multiple images in a figure}
+    \label{fig:texmeme}
+\end{figure}
+
+In the example figure above (\ref{fig:texmeme}) we used subfigures to control the arrangement of multiple images in a single figure. You'll need to include the \textit{caption} and \textit{subcaption} packages if you want to use this functionality. 
+
+Figures with multiple elements can get complex, so it's usually easiest to look up an example and adapt it.
+
+For a proper guide on positioning elements in a figure, see here:
+
+\url{https://www.overleaf.com/learn/latex/Positioning_images_and_tables}.\\
+
+Here's how we produced the figure above:
+
+\begin{verbatim}
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=0.9\linewidth]{latexisgreat.jpg}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=0.9\linewidth]{bernie.jpg}
+    \end{subfigure}
+    \caption{Multiple images in a figure}
+    \label{fig:texmeme}
+\end{figure}
+
+\end{verbatim}
+
+In general, latex uses curly braces \{,\} for mandatory arguments and rectangular braces [,] for additional optional arguments. If you do not need any optional arguments, these may be omitted.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tabular-asa: Tables}
+
+Since a scientific paper without tables, is unthinkable, latex offers some table options. Analogue to the \textit{figure} environment, there is a \textit{table} environment. The options you can use inside are the same. You can use \texttt{\textbackslash centering} to position the table with equal margin to the right and left and you can use \texttt{\textbackslash caption} and \texttt{\textbackslash label} to give it descriptive text and a label to reference it inside your text.\\
+However, instead of \texttt{\textbackslash includegraphics} we are going to use \texttt{\textbackslash tabular}. When beginning the tabular environment, you define the table structure. You can use \texttt{|} to get vertical lines between columns, and \texttt{c}, \texttt{l} and \texttt{r} to create columns, where the letter indicates text alignment: center, left and right.\\
+\texttt{\textbackslash begin\{tabular\}\{|l || c c c|\} } will create a table that has a frame on either side and the first column is left aligned and separated with a double line from the last three columns which are all centered.\\
+When you then fill the table with content each row in the table will be ended as you end a line in latex: with a double backslash \textbackslash\textbackslash. To indicate when a column ends you use a \& symbol\footnote{The \& symbol is commonly used to align text in environments. It can also be used in math environments to align multiple equations i.e. at the equal sign}. Lastly, to get a horizontal line to separate rows you can use \texttt{\textbackslash hline}.\\
+If you want an entry to span several columns you can use
+
+\texttt{\textbackslash multicolumn\{<no of columns>\}\{style\}\{content\}}.
+
+Where style is the same as for the tabular environment. Analogue to this, the package \texttt{multirow} gives you to the command \texttt{multirow}. For some reason, this is not part of the default commands.\\
+An example of what a table definition in latex could look like (You can see what this looks like in table \ref{tab:favs}): \pagebreak
+\begin{figure}[h!]
+\begin{verbatim}
+\begin{table}
+  \label{tab:favs}
+  \centering
+  \begin{tabular}{|l || c c c|}
+    \hline
+    \multicolumn{4}{|c|}{Animal Cuddle-ability vs Domestication}\\
+    \hline\hline
+    Animal & Favourite & Can Cuddle without Injury & Domesticated \\
+    \hline
+    Dog & \checkmark & \checkmark & \checkmark \\
+    Cat & \checkmark & \texttilde & \texttilde \\
+    Bear & \checkmark & $\times$ & $\times$ \\
+    \hline
+  \end{tabular}
+\caption{A very important table}
+\end{table}
+\end{verbatim}
+\end{figure}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l || c c c|}
+    \hline
+    \multicolumn{4}{|c|}{Animal Cuddle-ability vs Domestication}\\
+    \hline\hline
+    Animal & Favourite & Can Cuddle without Injury & Domesticated \\
+    \hline
+    Dog & \checkmark & \checkmark & \checkmark \\
+    Cat & \checkmark & \texttilde & \texttilde \\
+    Bear & \checkmark & $\times$ & $\times$ \\
+    \hline
+  \end{tabular}
+  \caption{A very important table}
+  \label{tab:favs}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsection{Where did it go?}
+
+If you create a figure using only 
+\begin{verbatim}
+    \begin{figure}
+\end{verbatim}
+\LaTeX~will try to find the most efficient place to put the figure. The default behaviour seems to try to minimize white space , while putting the figure close to where you defined it.
+Sometimes this will will lead to your figure being placed quite far away from where you wanted it and can lead to frustration when "the figure above" is placed at the bottom of the page.
+
+You can tell \LaTeX not to do this by adding an optional argument when opening the figure environment.
+In the example above (\ref{fig:texmeme}) we used the [h!] argument to force \LaTeX~to put the figure at the exact position we defined it. More options are available, including \textit{t} and \textit{b} for top and bottom of the page, among others \footnote{\url{https://en.m.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions} look here for more options}.

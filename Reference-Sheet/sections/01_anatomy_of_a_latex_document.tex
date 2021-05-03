@@ -1,0 +1,45 @@
+\section{Anatomy of a \LaTeX~document}
+
+Unlike Word, Latex is not a WYSIWYG (what you see is what you get) editor. This means that the text you write does not immediately appear in the style that you want it in. Instead Latex is written in .tex files that can be thought of as the "code" that contains all the text and instructions needed to generate your document. This can seem daunting at first, but also has a couple benefits: e.g. you can focus more on what you are writing instead of how it looks in the moment; your text is more portable and not dependent on someone else having the same software.\footnote{Word and some competitors have done a lot to close onto the advantages that Latex has, e.g. adding a formula editor and consistent styling of paragraphs, but still lack in the manner of citations, ease of changing style, and some more niche features} You are \em in some sense \em exchanging some comfort for more streamlined and controlled documents.\\
+Most commonly, .tex files are compiled as PDF files. 
+
+If you are using Overleaf to view this, you will see the contents of your .tex file on the left of the screen, and the resulting PDF on the right. Whenever you press the green 'recompile'\footnote{Overleaf Hotkey tip: Use ctrl + s or ctrl + Enter} button on top of your screen (see fig \ref{fig:recompile}), the text and instructions in your .tex file will be "compiled" and the result is the document shown on the right side of your screen. When you are done, you can download your PDF using the button on the right of 'recompile'. We will come back to the middle button.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=100pt]{compileanddownload.png}
+    \caption{The big green button will create/update your PDF. Once you are done, download your PDF using the button on the right.}
+    \label{fig:recompile}
+\end{figure}
+
+\noindent Every \LaTeX~document has two mandatory parts:
+
+\begin{enumerate}
+    \item a document class
+    \item a document environment 
+\end{enumerate}
+
+\noindent Additionally, you will commonly see:
+
+\begin{enumerate}
+    \item a list of packages to add functionality, indicated by\\ \texttt{ \textbackslash usepackage\{packagename\} }
+    \item commands to give your document a title, authors, or a date
+        \begin{itemize}
+            \item \texttt{ \textbackslash title\{This is your title!\}}
+            \item \texttt{ \textbackslash author\{ Leslie Lamport\footnote{Writer of the first macros for TeX that made LaTeX} \textbackslash and Donald Knuth\footnote{Inventor of TeX} \} }
+            \item \texttt{ \textbackslash date }
+        \end{itemize}
+    \item Some extra definitions like
+        \begin{itemize}
+            \item Fontsize \& Font
+            \item Number of Columns
+            \item Paper size (e.g. A4 for standard print, A0 for posters)
+            \item package options, e.g.\\ \texttt{ \textbackslash hypersetup\{colorlinks=true, citecolor=blue\} }
+        \end{itemize}
+    \item Symbol or Macro definitions. This basically defines your own custom backslash commands to be shorthand for something you will use a lot.
+\end{enumerate}
+
+All of the "extra information" above goes into the "preamble" of your .tex file. The preamble is everything that comes before the \texttt{ \textbackslash begin\{document\} } tag.
+All of your text and formatting commands go in between the \texttt{ \textbackslash begin\{document\} } and \texttt{ \textbackslash end\{document\} } tags.
+
+This may sound like a lot of extra effort, as opposed to just beginning to write your text as in Word, but most \LaTeX~editors will do all that for you. If you create a new document in Overleaf, all of the mandatory structure is already in place and you only have to fill in the information you want.

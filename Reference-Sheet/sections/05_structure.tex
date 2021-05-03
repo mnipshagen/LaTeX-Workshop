@@ -1,0 +1,5 @@
+\section{Structuring}
+For larger projects a single file with hundreds of lines of text can become pretty hard to navigate really quick. For this reason, you can split up your content over several files (e.g. one for each chapter, or one file for that really complex and unwieldy formula definition) and then bring them back together in the main file.\\
+The \textbackslash \textit{include} and \textbackslash \textit{input} commands take care of this.\\
+\input{input_example} ($\leftarrow$ This was put in with \textit{input}. No visible change from typing it into the document)\\
+On the other hand, \textit{include} is more self-contained. It adds a page break before and after the insert to separate the files. This \textit{can} be handy for book chapters etc., since it will be easier to change single things in each chapter, if you do not need to reference something inside a chapter from outside. Additionally, include cannot be used in the preamble. There is no example for include to not boost the page count with 2 page breaks.

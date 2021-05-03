@@ -1,0 +1,45 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \node[] (shape) at (1.45,4.5)
+    {\includegraphics[height=\paperheight]{Slides/Style/images/bg_title_left.png} };
+  \node[anchor=east] (logo) at (16.135, 8.405)
+    {\includegraphics[height=1.2cm]{Slides/Style/images/bg_logo_full.png} };
+  \node[anchor=east] (uni-name) at (15.9, 0.5)
+    {\includegraphics[height=.55cm]{Slides/Style/images/bg_uni_name.png} };
+  \ifnum\thepage>1\relax%
+%   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,\the\paperheight);
+%   \node[] (bar) at (.37,4.5)
+%     {\includegraphics[height=\paperheight]{Slides/Style/images/bg_bar.png} };
+  \fill[text_accent1](0,0) rectangle(.23,\the\paperheight);
+  \fill[text_accent2](.229,0) rectangle(.36,\the\paperheight);
+  \fill[text_accent3](.359,0) rectangle(.44,\the\paperheight);
+  \node[anchor=east] (logo) at (16.14, 8.405)
+    { \includegraphics[height=1.2cm]{Slides/Style/images/bg_logo_symbol.png} };
+    \node[anchor=west, black, font=\large] at (1.26, 8.25) { \inserttitle };
+  \fi
+  \end{tikzpicture}
+}
+
+
+% Title page
+\defbeamertemplate*{title page}{donders}[1][]
+{
+    \vskip35.8447pt%
+    \begin{beamercolorbox}[wd=12cm,ht=138.898pt,leftskip=85.134pt,#1]{white}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=12cm,leftskip=85.134pt,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+  \vfill
+}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode<all>

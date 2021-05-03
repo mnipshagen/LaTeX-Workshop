@@ -1,0 +1,100 @@
+\documentclass[12pt]{scrarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\title{A running Example of Latex}
+\author{Daniel Anthes \and Moritz Nipshagen}
+\date{} % defaults to today
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \lipsum[3]
+\end{abstract}
+
+\section{I am a section}
+
+\lipsum[1]
+
+\subsection{I am a subsection}
+
+\lipsum[2]
+
+\section{Math}
+
+Here is an inline formula: $e = mc^2$.
+
+One more, but now on a separate line:
+
+$$
+\mathcal{N}(x|\mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}}\exp \left({\frac{(x - \mu)^2}{2\sigma^2}}\right)
+$$
+
+Now with multiple aligned formulas:
+
+\begin{eqnarray}
+\dot{x_1} &=& -x_2 + x_{2}^3\\
+\dot{x_2} &=& -x_1 + x_{1}^3
+\end{eqnarray}
+
+Notice that \textit{eqnarray} numbers the formulas. Add a star to disable numbering:
+
+
+\begin{eqnarray*}
+\dot{x_1} &=& -x_2 + x_{2}^3\\
+\dot{x_2} &=& -x_1 + x_{1}^3
+\end{eqnarray*}
+
+\section{Images}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.3\linewidth]{Running-Example/zebra.jpeg}
+    \caption{Zebra.}
+    \label{fig:examplefig}
+\end{figure}
+
+We can also have multiple images in a figure:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=0.9\linewidth]{Running-Example/zebra.jpeg}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=0.9\linewidth]{bernie.jpg}
+    \end{subfigure}
+    \caption{Multiple images in a figure}
+    \label{fig:texmeme}
+\end{figure}
+
+\newpage
+
+\section{Tables}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l||c|c|c|}
+    \hline 
+    Animal & Is Zebra & Is Pet & Legs\\
+    \hline\hline
+    Dog         & No    & Yes   & 4\\
+    Cat         & No    & Yes   & 4\\
+    Zebra       & Yes   & No    & 4\\
+    Kangaroo    & No    & No    & 2\\
+    \hline
+    \end{tabular}
+    \caption{Animal Facts}
+    \label{tab:my_label}
+\end{table}
+
+\end{document}

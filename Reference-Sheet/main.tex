@@ -1,0 +1,61 @@
+\documentclass{scrarticle}
+
+% use a file that imports basic packages and sets up some stuff that we always use
+\input{basic_setup}
+
+\usepackage[backend=biber,
+            style=apa,
+            citestyle=apa]{biblatex}
+\addbibresource{biblatex-examples.bib}
+\addbibresource{references.bib}
+
+% The important stuff: Title, Autors and Date
+\title{\LaTeX~-Workshop\\{\large A Reference- / Work-sheet}}
+\author{Moritz Nipshagen \and Daniel Anthes}
+\date{May 2021}
+
+% and here it goes
+\begin{document}
+
+% Create the title part (title, author and date, depends on document class)
+\maketitle
+
+% generate our table of contents and then start a new page
+\tableofcontents
+\newpage
+
+% a short abstract
+\begin{abstract}
+    This is a cheat sheet illustrating the \LaTeX~commands you will find useful when getting started.
+    Hopefully, this will teach you everything you will need to publish your article in Dondrite's journal of interesting animals.
+\end{abstract}
+
+% All of our chapters!
+\input{01_anatomy_of_a_latex_document}
+
+\input{02_write_some_stuff}
+
+\input{03_math}
+
+\input{04_floats}
+
+\input{05_structure}
+
+\input{06_lists}
+
+\input{07_bibliographies}
+
+\input{08_templates}
+
+\input{09_broken}
+
+\input{10_beyond}
+
+% and make sure we have a bibliography of everything we cited
+% if you want to print your entire bibliography, even when you did not cite them in text, use:
+% \nocite{*}
+% instead of the * you can also put in specific citations, that had no place in your text, but
+% that should appear in the bibliography anyway
+\newpage
+\printbibliography
+\end{document}

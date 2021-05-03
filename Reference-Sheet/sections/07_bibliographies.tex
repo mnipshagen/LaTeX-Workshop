@@ -1,0 +1,30 @@
+\section{Bibliographies}
+
+For adding a bibliography to your document we recommend using biblatex\footnote{an alternative is bibtex}.
+All references you want to cite should be added to one (or more) .bib files.
+Each entry in your bibfile contains all the information latex needs to format the citation and bibliography entry.
+Once again, style is separated from content here and you can choose your citation style in the preamble of the document.
+\begin{figure}[h!]
+    \begin{verbatim}
+    \usepackage{biblatex}[backend=biber, style=apa, citestyle=apa]
+    \addbibresource{biblatex-examples.bib}
+    \end{verbatim}
+    \caption{setting up a bibliography}
+    \label{fig:bibliography}
+\end{figure}
+
+In the figure above (\ref{fig:bibliography}) the first line imports biblatex and sets the citation style to apa\footnote{more citation styles here: \url{https://www.overleaf.com/learn/latex/Biblatex_citation_styles}}.
+The second line adds a bib file with example citations (use your own here).
+
+Entries from your bibfile are cited using \textit{\textbackslash cite\{referencelabel\}}. Each entry in your bib file(s) has a label that can be used with cite to automatically place a citation at the spot where you use the command and add the entry to your bibliography if it is not yet added.
+
+You can also add items to your bibliography without citing them in the text by using \textit{\textbackslash nocite\{reflabel\}}.
+
+For example: (\cite{springer} \cite{aristotle:anima})
+
+\nocite{companion}
+\nocite{iliad}
+
+While you could write these entries yourself, we recommend using a reference manager such as Zotero to create them automatically.\footnote{Bonus tip: Zotero offers an extension for Chrome/Firefox that extracts citations from websites,journals or online pdfs automatically}. Zotero offers exporting your collections to .bib files and can keep them updated automatically if you add new entries\footnote{Bonus tip: consider installing "better bibtex" should you choose to use Zotero \url{https://retorque.re/zotero-better-bibtex/}}.
+
+Finally, add \textit{\textbackslash printbibliography} where you want your bibliography. It will be formatted in the format you chose when importing biblatex.

@@ -1,0 +1,15 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{donders}[1][]
+{
+% \vskip1cm%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+  \begin{tikzpicture}
+    \useasboundingbox[](0,0) rectangle(\the\paperwidth,2cm);
+    \node[anchor=west, text_accent2,font=\Large] at (1.2,0){\insertframetitle};
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>

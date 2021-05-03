@@ -1,0 +1,68 @@
+\section{What else?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Version Control}
+
+All tex files are just plain text files. This also makes them great for use with version control software such as git.
+You can easily check in your tex files into a repository, track all updates and go back to old versions if you accidentally lost something.
+While you could also do this with your word documents, all the hidden information in docx files means that you won't be able to see what you changed in each commit, plus you might run into trouble if you use different versions of Word on different machines.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{It's free}
+
+\LaTeX~is free and open source and has a large community and there is probably no "easy" problem that has not been solved multiple times.
+There is also a huge number of useful packages freely available to add extra functionality to latex, all free to download (or already included in overleaf or common tex distributions).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Packages you may find useful}
+There are a lot more packages and searching for "latex <your problem/use case>" will usually produce a package that solves it for you. Nonetheless here are some packages that may save you a search or two. Many of the packages below are featured as well on \cite{isaksson_2020}, where we also learned about cleveref and savetrees.
+
+\begin{longtable}[c]{m{.125\textwidth} | m{.07\textwidth}<{\centering} | m{.125\textwidth}<{\centering} | m{.6\textwidth}<{\centering}}
+     Package Name & Used by Us & Link & Description \\
+     \hline
+     TikZ & \checkmark & \href{https://www.overleaf.com/learn/latex/TikZ_package}{Overleaf Docs} & can be used for drawing all sorts of things, from graphs, to flow charts, to timelines \dots It takes some getting used to but does offer a lot of flexibility (in most cases it's enough to steal an example from somewhere and adjust it to what you want) \\
+     \hline
+     pgfplots & X & \href{http://pgfplots.sourceforge.net/}{Sourceforge} & creates your plots in \LaTeX~ from data you provide. If you update your results, your plots are regenerated automatically. Plots are created as vector graphics, so no more blurry png files \\
+     \hline
+     siunitx & \checkmark & \href{https://ctan.org/pkg/siunitx}{CTAN} & Provides commands to better use units (e.g. micro symbols, bytes, \dots). This makes it less of a hassle to include a $\mu$ or other prefixes or change the style of the one letter for the unit \\
+     \hline
+     booktabs & \texttilde & \href{https://ctan.org/pkg/booktabs}{Booktabs CTAN} & \multirow{6}{=}{They give you more options and control over the looks of your tables to get the most out of them. booktabs is mostly concerned with styling and readability, tabularx supplies commands for width of the columns and gives you easier options for colour and layout and longtable handles tables that are longer than one page and correctly breaks them apart} \\
+     tabularx & \checkmark & \href{https://www.ctan.org/pkg/tabularx}{Tabularx CTAN} & \\
+     longtable & \checkmark &  \href{https://www.ctan.org/pkg/longtable?lang=en}{Longtable CTAN} & \\
+     &&\\&&\\&&\\
+     \hline
+     savetrees & X & \href{https://www.ctan.org/pkg/savetrees}{CTAN} & savetrees reduces whitespace and compressed your text more, so that it fits onto less pages. \\
+     \hline
+     glossaries \& gloassries-extra & X & \href{https://www.ctan.org/pkg/glossaries}{Glossaries CTAN}, \href{https://www.ctan.org/pkg/glossaries-extra}{Extra CTAN} & With these two packages you can create a glossary for your paper to have a place for all those acronyms and terms. It is used similarly to how you are using citations and bibliographies. \\
+     \hline
+     cleveref & X & \href{https://www.ctan.org/pkg/cleveref}{CTAN} & this makes referencing your figures and tables easier. In standard latex you need to put the identifier (Fig. / figure / table / etc.) before the \textbackslash ref command. This package takes care of that and automatically inserts the correct type. \\
+     \hline
+     microtype & X & \href{https://ctan.org/pkg/microtype}{CTAN} & This package does some behind-the-scenes magic to improve typesetting, e.g. by reducing hyphenated words and dynamically adjusting kerning \\
+     \hline
+     geometry & \checkmark &  \href{https://github.com/davidcarlisle/geometry}{GitHub} & Geometry lets you easily change the paper size you are working on. So you can create posters, custom paper sizes, \dots. It also gives you options to change margins and to "fix" some latex calculations that can be bothersome in some edge cases. \\
+     \hline
+     Marginnote & & \href{https://www.overleaf.com/learn/latex/Margin_notes}{Overleaf Docs} & \multirow{6}{=}{marginnote gives you more control over where and how you can place text on the paper margins, which can be useful for books or supplemental information. The latter two fix some issues and errors with the original package so it is recommended to use all three.} \\
+     mparhack & X & \href{https://www.ctan.org/pkg/mparhack}{CTAN} & \\
+     marginfix & & \href{https://www.ctan.org/pkg/mparhack}{CTAN} & \\
+     &&\\&&\\&&\\
+     \hline
+     lipsum & \checkmark &  \href{https://www.ctan.org/pkg/lipsum}{CTAN} & Generate "lorem ipsum"-style paragraphs to fill out text. Useful when designing layouts etc. \\
+     \hline
+     fancyhdr & \checkmark & \href{https://www.overleaf.com/learn/latex/Headers_and_footers#Style_customization_in_single-sided_documents}{Overleaf Docs} & Gives options and control to style your header and footer to include titles, authors or page numbers or whatever else in either.\\
+
+\end{longtable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Offline \LaTeX}
+
+Overleaf is convenient if you do not want to install anything or collaborate with others. If you would rather work offline, you can install a \LaTeX~distribution on your computer.
+A common one is texlive \footnote{\url{https://tug.org/texlive/}} for Linux, the Mac derivative mactex \footnote{\url{https://tug.org/mactex/}} and Protext\footnote{\url{https://tug.org/protext/}} for Windows. An editor (texstudio) should be included, but there are different ones out there for you to choose.\\
+If you are already using an editor like vscode there are plugins available, so you never have to leave your favourite editor.
+
+As a plus, locally compiling your documents can be faster than online services, especially for large documents with many figures and images (plus you do not have to upload the images).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Markdown + \texorpdfstring{\LaTeX = \heart}{Latex = <3}}
+
+There are many easy ways to combine Markdown and \LaTeX. For quick notes with formulas you can use the math environment from \LaTeX~in your Markdown text.
+Conversely, there are also ways to insert entire Markdown files into .tex files.
+\footnote{this even works for presentations written in Markdown, with formulas and styling written in \LaTeX}.
