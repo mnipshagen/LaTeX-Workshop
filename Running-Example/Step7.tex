@@ -13,7 +13,7 @@
 \usepackage[backend=biber,
             style=apa,
             citestyle=apa]{biblatex}
-\addbibresource{Running-Example/Workshop-Latex.bib}
+\addbibresource{./Workshop-Latex.bib}
 
 \title{A running Example of Latex}
 \author{Daniel Anthes \and Moritz Nipshagen}
@@ -64,7 +64,7 @@ Notice that \textit{eqnarray} numbers the formulas. Add a star to disable number
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=.3\linewidth]{Running-Example/zebra.jpeg}
+    \includegraphics[width=.3\linewidth]{zebra.jpeg}
     \caption{Zebra.}
     \label{fig:examplefig}
 \end{figure}
@@ -74,11 +74,11 @@ We can also have multiple images in a figure:
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=0.9\linewidth]{Running-Example/zebra.jpeg}
+        \includegraphics[width=0.9\linewidth]{zebra.jpeg}
         \caption{Zebra.}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=0.9\linewidth]{Running-Example/kangaroo.jpeg}
+        \includegraphics[width=0.9\linewidth]{kangaroo.jpeg}
         \caption{Kangaroo.}
     \end{subfigure}
     \caption{Animals.}
@@ -136,11 +136,11 @@ Most of your favourite platforms provide bib(la)tex style citations to copy and 
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=0.9\linewidth]{Running-Example/academic_microsoft.png}
+        \includegraphics[width=0.9\linewidth]{academic_microsoft.png}
         \caption{Exporting citations from \url{academic.microsoft.com}}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=0.9\linewidth]{Running-Example/scholar_google.png}
+        \includegraphics[width=0.9\linewidth]{scholar_google.png}
         \caption{Exporting citations from \url{scholar.google.com}}
     \end{subfigure}
     \caption{Options to download in bibtex format from common paper aggregators.}
@@ -154,7 +154,7 @@ If you are not already, we firmly urge you to consider using one (no matter if y
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=.4\textwidth]{Running-Example/zotero_export.png}
+    \includegraphics[width=.4\textwidth]{zotero_export.png}
     \caption{The zotero export window}
     \label{fig:zotero}
 \end{figure}
@@ -163,7 +163,7 @@ If you are not already, we firmly urge you to consider using one (no matter if y
 
 The package that handles all of the nice reference commands and organisation is called \textbf{biblatex}. You import it like any other package: \texttt{\textbackslash usepackage\{biblatex\}}. When importing you can give it a bunch of options, like the citation style to use, like this: \texttt{\textbackslash usepackage[backend=biber, style=apa, citestyle=apa]\{biblatex\}}. You basically always want to default to using the biber backend, unless you have a reason not to. The \texttt{style} option is the style for the bibliography and the \texttt{citestyle} option is for inline citations.\\
 Once you imported biblatex, you can tell it where to find your references with the \texttt{\textbackslash addbibresource} command, which in our case looks like this:\\
-\texttt{\textbackslash addbibresource\{Running-Example/Workshop-Latex.bib\}}.
+\texttt{\textbackslash addbibresource\{Workshop-Latex.bib\}}.
 
 \subsubsection{Citation Styles and Bibliography}
 
