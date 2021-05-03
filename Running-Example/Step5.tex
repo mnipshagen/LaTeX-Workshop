@@ -32,9 +32,10 @@
 \lipsum[2]
 
 \section{Math}
-
-Here is an inline formula: $e = mc^2$.
-
+some\\
+text
+here
+Here is an inline formula: $e = mc^2$. asdasda\\
 One more, but now on a separate line:
 
 $$
@@ -57,7 +58,6 @@ Notice that \textit{eqnarray} numbers the formulas. Add a star to disable number
 \end{eqnarray*}
 
 \section{Images}
-
 \begin{figure}[h!]
     \centering
     \includegraphics[width=.3\linewidth]{zebra.jpeg}
@@ -70,7 +70,8 @@ We can also have multiple images in a figure:
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=0.9\linewidth]{zebra.jpeg}
+    \centering
+        \includegraphics[height=90pt]{zebra.jpeg}
         \caption{Zebra.}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
